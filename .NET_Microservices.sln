@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Play.Catalog", "Play.Catalog", "{5E65B30A-C71B-4CD3-ADF8-87F10B5064C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6FDDC5C3-BD93-47A4-A82A-A6A4A4CF7046}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play.Catalog.Service", "Play.Catalog\src\Play.Catalog.Service\Play.Catalog.Service.csproj", "{E06BC660-D584-405C-87C2-206013C40CFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E06BC660-D584-405C-87C2-206013C40CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06BC660-D584-405C-87C2-206013C40CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06BC660-D584-405C-87C2-206013C40CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06BC660-D584-405C-87C2-206013C40CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6FDDC5C3-BD93-47A4-A82A-A6A4A4CF7046} = {5E65B30A-C71B-4CD3-ADF8-87F10B5064C4}
+		{E06BC660-D584-405C-87C2-206013C40CFA} = {6FDDC5C3-BD93-47A4-A82A-A6A4A4CF7046}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B594C027-28E4-40A1-BF22-E96480F6C60C}
+	EndGlobalSection
+EndGlobal
