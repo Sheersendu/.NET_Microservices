@@ -41,7 +41,7 @@ namespace Play.Catalog.Service.Controllers
             var existingItem = items.Where(item => item.Id == id).SingleOrDefault();
             if (existingItem == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             var updatedItem = existingItem with
             {
@@ -51,6 +51,18 @@ namespace Play.Catalog.Service.Controllers
             };
             var index = items.FindIndex(existingItem => existingItem.Id == id);
             items[index] = updatedItem;
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteItem([FromRoute] Guid id)
+        {
+            var index = items.FindIndex(existingItem => existingItem.Id == id);
+            if (index == -1)
+            {
+                return NotFound();
+            }
+            items.RemoveAt(index);
             return NoContent();
         }
     }
