@@ -21,9 +21,13 @@ namespace Play.Catalog.Service.Controllers
         }
 
         [HttpGet("{id}")]
-        public ItemDTO GetItemById([FromRoute] Guid id)
+        public ActionResult<ItemDTO> GetItemById([FromRoute] Guid id)
         {
             var item = items.Where(item => item.Id == id).SingleOrDefault();
+            if (item == null)
+            {
+                return NotFound();
+            }
             return item;
         }
 
