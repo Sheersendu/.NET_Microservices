@@ -1,6 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.SuppressAsyncSuffixInActionNames = false;
+});
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
