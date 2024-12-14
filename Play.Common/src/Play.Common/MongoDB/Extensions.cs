@@ -1,11 +1,12 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Settings;
+using Play.Common.Settings;
 
-namespace Play.Catalog.Service.Repositories
+namespace Play.Common.MongoDB
 {
 	public static class Extensions
 	{
@@ -13,6 +14,7 @@ namespace Play.Catalog.Service.Repositories
 		{
 			BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
 			BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+
 			services.AddSingleton(serviceProvider =>
 			{
 				var configuration = serviceProvider.GetService<IConfiguration>();
