@@ -5,6 +5,6 @@ namespace Play.Catalog.Service.Settings
 		public string Host { get; init; }
 		public int Port { get; init; }
 
-		public string ConmnectionString => $"mongodb://{Host}:{Port}";
+		public string ConnectionString => $"mongodb://{Host}:{Port}";
 	}
 }
