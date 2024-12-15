@@ -1,4 +1,5 @@
 using Play.Common.MongoDB;
+using Play.Inventory.Service.Clients;
 using Play.Inventory.Service.Entities;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddMongo()
 				.AddMongoRepository<InventoryItem>("inventoryitems");
+builder.Services.AddHttpClient<CatalogClient>(client =>
+{
+	client.BaseAddress = new Uri("http://localhost:5103");
+});
 
 var app = builder.Build();
 
