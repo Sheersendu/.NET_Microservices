@@ -30,7 +30,7 @@ namespace Play.Inventory.Service.Controllers
 
 			var inventoryItemDTOs = inventoryItemEntities.Select(inventoryItem =>
 			{
-				var catalogItem = catalogItems.SingleOrDefault(catalogItem => catalogItem.Id == inventoryItem.Id);
+				var catalogItem = catalogItems.SingleOrDefault(catalogItem => catalogItem.Id == inventoryItem.CatalogItemId);
 				return inventoryItem.AsDTO(catalogItem.Name, catalogItem.Description);
 			});
 			return Ok(inventoryItemDTOs);
