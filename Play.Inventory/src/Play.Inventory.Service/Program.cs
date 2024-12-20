@@ -5,14 +5,12 @@ using Polly;
 using Polly.Timeout;
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddMongo()
 				.AddMongoRepository<InventoryItem>("inventoryitems");
-Random jitterer = new Random();
+Random jitterer = new();
 builder.Services.AddHttpClient<CatalogClient>(client =>
 {
 	client.BaseAddress = new Uri("http://localhost:5103");
