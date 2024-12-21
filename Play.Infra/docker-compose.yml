@@ -11,6 +11,16 @@ services:
       - 27017:27017
     volumes:
       - mongodbdata:/data/db
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672 # One port for our services to comm with our rabbitmq
+      - 15672:15672 # One port for us to navigate to rabbitmq portal
+    volumes:
+      - rabbitmqdata:/var/lib/rabbitmq
+    hostname: rabbitmq
 
 volumes:
   mongodbdata:
+  rabbitmqdata:
