@@ -6,7 +6,7 @@ using Play.Common;
 
 namespace Play.Catalog.Service.Controllers
 {
-    [Route("items")]
+	[Route("items")]
 	[ApiController]
 	public class ItemsController : ControllerBase
 	{
@@ -18,11 +18,12 @@ namespace Play.Catalog.Service.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<ItemDTO>> GetItemsAsync()
+		public async Task<ActionResult<IEnumerable<ItemDTO>>> GetItemsAsync()
 		{
 			var items = (await itemsRepository.GetAllAsync())
 						.Select(item => item.AsDto());
-			return items;
+
+			return Ok(items);
 		}
 
 		[HttpGet("{id}")]
